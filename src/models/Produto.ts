@@ -2,14 +2,14 @@ import {Model, DataTypes} from 'sequelize'
 import {sequelize } from '../instances/mysql'
 
 export interface ProdutoInstance extends Model{
-    id: number,
+    id_produtos: number,
     nome: string,
     valor: number,
     quantidade: number
 }
  
 export const Produto = sequelize.define<ProdutoInstance>("Produto,",{
-    id:{
+    id_produtos:{
         primaryKey:true,
         type:DataTypes.INTEGER
     },

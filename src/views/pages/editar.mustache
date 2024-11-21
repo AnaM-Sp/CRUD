@@ -1,0 +1,30 @@
+{{>partials/header}}
+
+<a href="/produtos">Tabela de Produtos<a>
+
+<h1>Editar Produtos</h1>
+
+<form action="/editar/{{id_produtos}}" method="POST">
+
+Nome do Produto:
+<br>
+<input type="text" name="nome" id="nome"inserirNomedoProduto value="{{product.nome}}">
+<p></p>
+
+Valor:
+<br>
+<input type="number" min="0" max="100" name="valor" id="valor" step="any" value="{{product.valor}}">
+<p></p>
+
+Quantidade:
+<br>
+<input type="number" name="quantidade" id="quantidade"inserirQuantidade value="product.quantidade">
+<p></p>
+
+<button type="salvarAlteracoes">Salvar Alterações</button>
+
+</form>
+
+<a href="/produtos">Clique aqui</a>Para voltar a página de produtos
+
+{{>partials/footer}}
