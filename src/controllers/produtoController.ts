@@ -49,8 +49,22 @@ export const atualizaProduto = async(req: Request, res: Response) =>{
         quantidade
     },{
         where:{
-            id:id_produtos
+            id_produtos:id_produtos
         }
     })
     res.redirect('/produtos')
+}
+
+export const excluiProduto = async (req: Request, res: Response) => {
+    let { id_produtos } = req.params; // Obtém o ID do produto da URL
+
+    // Utiliza o método 'destroy' para excluir o produto com o ID fornecido
+    await Produto.destroy({
+        where: {
+            id_produtos:id_produtos
+        }
+    });
+
+    // Redireciona para a página de produtos após a exclusão
+    res.redirect('/produtos');
 }
